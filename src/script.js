@@ -127,6 +127,64 @@ const createTaskHTML = (task, borderStyle) => {
 }
 
 
+const setupDragAndDrop = () => {
+    const taskboxes = document.querySelectorAll(".taskbox");
+    
+    taskboxes.forEach(tsk => {
+        tsk.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData('text/plain', tsk.dataset.id);
+            tsk.classList.add("Dragged");
+            setTimeout(() => { tsk.style.display = 'none'; }, 0);
+        });
+        tsk.addEventListener("dragend", (e) => {
+            tsk.classList.remove("Dragged");
+            tsk.style.display = "block";
+        });
+    });
+
+    const allboxes = document.querySelectorAll(".box");
+    allboxes.forEach(box => {
+        box.addEventListener('dragover', (e) => e.preventDefault());
+        box.addEventListener('drop', (e) => handleDrop(e, box));
+    });
+}
+
+
+const handleDrop = (e, box) => {
+    e.preventDefault();
+    const idT = e.dataTransfer.getData('text');
+    const draggedElement = document.querySelector(`[data-id='${idT}']`);
+
+    if (!draggedElement) {
+        console.error("No element to drop");
+        return;
+    }
+
+    let sourceArray, targetArray, sourceKey, targetKey;
+    
+    if (box.id === "Doing") {
+        sourceArray = Tasks; targetArray = doing; sourceKey = 'Tasks'; targetKey = 'doing';
+    } else if (box.id === "Done") {
+        sourceArray = doing; targetArray = completedTasks; sourceKey = 'doing'; targetKey = 'CompletedTasks';
+    } else if (box.id === "ToDo") {
+        sourceArray = completedTasks; targetArray = Tasks; sourceKey = 'CompletedTasks'; targetKey = 'Tasks';
+    }
+
+    moveTask(idT, sourceArray, targetArray, sourceKey, targetKey);
+    box.appendChild(draggedElement);
+    showTodoList();
+}
+
+
+const moveTask = (id, sourceArray, targetArray, sourceStorageKey, targetStorageKey) => {
+    let taskIndex = sourceArray.findIndex(task => task.id == id);
+    if (taskIndex > -1) {
+        targetArray.push(sourceArray[taskIndex]);
+        sourceArray.splice(taskIndex, 1);
+        localStorage.setItem(sourceStorageKey, JSON.stringify(sourceArray));
+        localStorage.setItem(targetStorageKey, JSON.stringify(targetArray));
+    }
+}
 
 
 const createTask = () => {
@@ -158,6 +216,7 @@ function removeTaskById(id) {
     completedTasks = completedTasks.filter(task => task.id !== id);
     localStorage.setItem('CompletedTasks', JSON.stringify(completedTasks));
 }
+
 
 
 function editTask(id) {
