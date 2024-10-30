@@ -22,3 +22,10 @@ let doing = JSON.parse(localStorage.getItem("doing")) || [];
 closeComment.addEventListener("click",function(){
     comment.style.display = "none"
 })
+
+closeMenu.addEventListener("click",function(){
+    form.style.display = "none"
+})
+function addTask(){
+     form.style.display = "block"
+}
