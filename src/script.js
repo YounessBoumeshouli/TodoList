@@ -126,7 +126,6 @@ const createTaskHTML = (task, borderStyle) => {
     `;
 }
 
-
 const setupDragAndDrop = () => {
     const taskboxes = document.querySelectorAll(".taskbox");
     
@@ -185,6 +184,7 @@ const moveTask = (id, sourceArray, targetArray, sourceStorageKey, targetStorageK
         localStorage.setItem(targetStorageKey, JSON.stringify(targetArray));
     }
 }
+
 
 
 const createTask = () => {
