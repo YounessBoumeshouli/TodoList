@@ -118,7 +118,9 @@ const createTaskHTML = (task, borderStyle) => {
         <div  draggable="true" class="taskbox" data-id="${task.id}" style="border-left:${borderStyle}">
             <div class="mt-4 flex-col items-center justify-between">
                
-                <p class="text-sm font-medium text-gray-500">${task.task}</p>
+               
+
+             <p class="text-sm font-medium text-gray-500">${task.task}</p>
                 <p class="mt-1 max-w-2xl text-sm text-gray-500">${task.description}</p>
                 <h3 class="text-lg leading-6 font-medium text-gray-900">${task.date}</h3>
                 <p class="text-sm font-medium text-gray-500">${task.priority}</p>
