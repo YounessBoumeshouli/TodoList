@@ -169,6 +169,7 @@ const handleDrop = (e, box) => {
 
     let sourceArray, targetArray, sourceKey, targetKey;
     
+    
     if (box.id === "Doing") {
         sourceArray = Tasks; targetArray = doing; sourceKey = 'Tasks'; targetKey = 'doing';
     } else if (box.id === "Done") {
@@ -176,6 +177,7 @@ const handleDrop = (e, box) => {
     } else if (box.id === "ToDo") {
         sourceArray = completedTasks; targetArray = Tasks; sourceKey = 'CompletedTasks'; targetKey = 'Tasks';
     }
+
 
     moveTask(idT, sourceArray, targetArray, sourceKey, targetKey);
     box.appendChild(draggedElement);
