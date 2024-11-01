@@ -112,6 +112,8 @@ const getBorderStyle = (priority) => {
 
 
 const createTaskHTML = (task, borderStyle) => {
+
+    
     return `
         <div draggable="true" class="taskbox" data-id="${task.id}" style="border-left:${borderStyle}">
             <div class="mt-4 flex-col items-center justify-between">
