@@ -15,6 +15,7 @@ let closeMenu = document.getElementById("closeMenu")
 let closeComment = document.getElementById("closeComment")
 let CommentContent = document.getElementById("CommentContent")
 let comment=document.getElementById("Comment")
+
 let Tasks = JSON.parse(localStorage.getItem("Tasks")) || [];
 let completedTasks = JSON.parse(localStorage.getItem("CompletedTasks")) || [];
 let doing = JSON.parse(localStorage.getItem("doing")) || [];
