@@ -169,7 +169,7 @@ const handleDrop = (e, box) => {
 
     let sourceArray, targetArray, sourceKey, targetKey;
     
-    
+
     if (box.id === "Doing") {
         sourceArray = Tasks; targetArray = doing; sourceKey = 'Tasks'; targetKey = 'doing';
     } else if (box.id === "Done") {
@@ -203,7 +203,7 @@ const createTask = () => {
         description: descInput.value,
         date: dateInput.value,
         priority: priorityInput.value,
-        id: Date.now() 
+         id: Date.now() 
     };
     Tasks.push(data);
     localStorage.setItem('Tasks', JSON.stringify(Tasks));
