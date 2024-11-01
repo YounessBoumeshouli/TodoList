@@ -213,7 +213,7 @@ const createTask = () => {
 
 
 function deleteTask(id) {
-    removeTaskById(id);
+     removeTaskById(id);
     showTodoList();
 }
 
