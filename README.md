@@ -1,6 +1,6 @@
 # TodoList
 ![Alt text](./src/screenShot.png?raw=true "Title")
-![Alt text](./src/Screenshot2.png.png?raw=true "Title")
+![Screen2](./src/screenshot2.png.png?raw=true "Title")
 # Dillinger
 ## Not Trello
 
