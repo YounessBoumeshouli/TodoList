@@ -1,7 +1,8 @@
 # TodoList
 ![Alt text](./src/screenShot.png?raw=true "Title")
-![Screen2](./src/screenshot2.png.png?raw=true "Title")
-# Dillinger
+
+# by Yns
+![Screen2](./src/screenshot2.png?raw=true "Title")
 ## Not Trello
 
 
