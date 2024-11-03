@@ -212,6 +212,9 @@ const createTask = () => {
 }
 
 
+
+
+
 function deleteTask(id) {
      removeTaskById(id);
     showTodoList();

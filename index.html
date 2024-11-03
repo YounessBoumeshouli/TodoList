@@ -10,14 +10,14 @@
 </head>
 <body class="bg-gray-100 flex flex-col items-center  p-6">
     <div class="w-full max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden mt-8">
-        <div class="flex justify-between items-center px-6 py-4 bg-teal-600">
+        <nav class="flex justify-between items-center px-6 py-4 bg-teal-600">
             <h1 class="text-white font-bold text-2xl uppercase">Not Trello</h1>
             <div class="flex items-center">
                 <input type="text" name="search" id="search" placeholder="Search tasks" class="mr-2 py-2 px-4 rounded bg-white focus:outline-none">
                 <button onclick="searchTask()" class="bg-teal-700 text-black py-2 px-4 rounded hover:bg-teal-900 w-max">Search</button>
                 <button onclick="addTask()" class="ml-4 bg-teal-700 text-white py-2 px-4 rounded hover:bg-teal-900">Add Task</button>
             </div>
-        </div>
+        </nav>
         <form class="w-full max-w-2xl mx-auto px-6 py-4 flex-col bg-gray-100 border-t hidden" id="form">
             <div class="flex flex-col items-start mb-4">
                 <div class="flex justify-between w-full">
@@ -60,7 +60,7 @@
             </div>  
         </div>
     </div>   
-    <span id="Comment" class="w-full h-max absolute bottom-1 flex justify-between" > 
+    <section id="Comment" class="w-full h-max absolute bottom-1 flex justify-between" > 
         <p id="CommentContent" class="w-max"></p>
         <button id="closeComment" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 h-7" >
         <span class="sr-only">Close menu</span>
@@ -68,7 +68,7 @@
         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
-      </button></span> 
+      </button></section> 
     <script src="./src/script.js"></script>
 </body>
 </html>
