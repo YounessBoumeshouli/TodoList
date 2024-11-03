@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.box {
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    min-height: 300px;
+}
+.taskbox {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000;
+    cursor: grab;
+}
+.Dragged {
+    opacity: 0.5;
+}
